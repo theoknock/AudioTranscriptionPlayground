@@ -4,8 +4,6 @@
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone required</string>
-	<key></key>
-	<string></string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Speech recognition required</string>
 </dict>

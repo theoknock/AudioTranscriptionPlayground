@@ -22,7 +22,6 @@ import Observation
             case .authorized:
                 DispatchQueue.main.async {
                     self.isTranscribing = true
-                    
                 }
                 self.startRecording()
             case .denied, .restricted, .notDetermined:
@@ -74,11 +73,10 @@ import Observation
             if let result = result {
                 DispatchQueue.main.async {
                     self.transcription = result.bestTranscription.formattedString
+                    if error != nil || result.isFinal == true {
+                        self.stopTranscribing()
+                    }
                 }
-            }
-            
-            if error != nil || result?.isFinal == true {
-//                self.stopTranscribing()
             }
         }
     }
